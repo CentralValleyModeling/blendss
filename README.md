@@ -2,19 +2,10 @@
 
 Combine multiple DSS files into one for post-processing, and model comparison.
 
-```mermaid
-flowchart LR
-    BLENDER[[blendss]]
-    BLEND[(`blended.dss`)]
-    A[(base_study.dss)]
-    B[(exploration_study.dss)]
-    C[(published_study.dss)]
+## Merge files from the command line
 
-    A --> BLENDER
-    B --> BLENDER
-    C --> BLENDER
-
-    BLENDER --> BLEND
+```powershell
+python -m blendss "studies.toml" --fv "calsim3"
 ```
 
 ## Example
@@ -58,15 +49,32 @@ dss="/path/to/DSS#2.dss"
 3. Run blendss:
 
 ```powershell
-ptyhon -m blendss "path/to/your/config.toml" --fv "/path/to/your/config.fv"
+python -m blendss "path/to/your/config.toml" --fv "/path/to/your/config.fv"
 ```
 
 You can even use one of our built-in fv files like this:
 
 ```powershell
-ptyhon -m blendss "path/to/your/config.toml" --fv "calsim3"
+python -m blendss "path/to/your/config.toml" --fv "calsim3"
 ```
 
 ## Included FV files
 
 - `calsim3.fv`: Standard paths read from the CalSim3 DV file.
+
+## Data flow
+
+```mermaid
+flowchart LR
+    BLENDER[[blendss]]
+    BLEND[(`blended.dss`)]
+    A[(base_study.dss)]
+    B[(exploration_study.dss)]
+    C[(published_study.dss)]
+
+    A --> BLENDER
+    B --> BLENDER
+    C --> BLENDER
+
+    BLENDER --> BLEND
+```
