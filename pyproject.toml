@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "blendss"
 authors = [
-    {name = "Zachary Roy", email = "zachary.roy@water.ca.gov" }
+    {name = "Zachary Roy", email = "zachary.roy@water.ca.gov"}
 ]
 description = "Combine multiple DSS files into one for post-processing, and model comparison."
 readme = "README.md"
@@ -18,10 +18,15 @@ dependencies = [
     "pandss"
 ]
 
-
 [project.scripts]
 cli = "blendss:cli"
 
-
 [tool.setuptools]
 include-package-data = true
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib", 
+    "--strict-markers",
+]
+pythonpath = "./src"
