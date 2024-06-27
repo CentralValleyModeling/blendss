@@ -1,6 +1,7 @@
 from importlib.metadata import PackageNotFoundError, version
 
 from .blend import blend
+from .cli import cli
 
 try:
     __version__ = version(__name__)
