@@ -1,0 +1,7 @@
+name: blendss
+channels:
+  - dwr-cvm
+  - defaults
+dependencies:
+  - pandss
+  - python=3.11
