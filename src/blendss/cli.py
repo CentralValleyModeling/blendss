@@ -85,7 +85,8 @@ def parse_arguments():
 
 
 def cli():
-    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
     args = parse_arguments()
     for arg, val in vars(args).items():
         logging.info(f"{arg}={val}")
