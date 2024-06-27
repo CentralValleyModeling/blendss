@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blendss"
+authors = [
+    {name = "Zachary Roy", email = "zachary.roy@water.ca.gov" }
+]
+description = "Combine multiple DSS files into one for post-processing, and model comparison."
+readme = "README.md"
+license = {text = "MIT" }
+version = "0.0.1"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy"
+]
+
+
+[project.scripts]
+cli = "blendss.cli:cli"
+
+
+[tool.setuptools]
+include-package-data = true
