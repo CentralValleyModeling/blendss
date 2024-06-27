@@ -52,6 +52,7 @@ def blend(
     studies: StudyConfig | list[Study],
     paths: list[pdss.DatasetPath],
 ):
+    logging.info(f"blending {len(studies)} dss files")
     assert isinstance(new_dss, Path), "argument new_path should be type pathlib.Path"
     new_dss = new_dss.resolve()
     assert len(studies) > 0, ""
