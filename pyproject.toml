@@ -10,16 +10,16 @@ authors = [
 description = "Combine multiple DSS files into one for post-processing, and model comparison."
 readme = "README.md"
 license = {text = "MIT" }
-version = "0.1.0"
+version = "0.1.1"
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
     "pandss"
 ]
 
 [project.scripts]
-cli = "blendss.cli:cli"
+blendss = "blendss.cli:cli"
 
 [tool.setuptools]
 include-package-data = true
