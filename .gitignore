@@ -2,7 +2,8 @@
 # Calsim flavored ignores
 run/=ILP=
 Results
-assets
+assets/
+!tests/assets
 run/cvgroundwater/data/restart
 
 # stubbed directories
