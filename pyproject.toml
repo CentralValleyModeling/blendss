@@ -18,9 +18,6 @@ dependencies = [
     "pandss"
 ]
 
-[project.scripts]
-blendss = "blendss.cli:cli"
-
 [tool.setuptools]
 include-package-data = true
 
