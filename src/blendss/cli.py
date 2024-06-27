@@ -6,6 +6,7 @@ import pandss as pdss
 
 from . import __version__
 from .blend import blend
+from .fv import get_available as get_avail_fv
 from .load import load_fv, load_studies
 
 
@@ -33,7 +34,13 @@ def fv_file(path: str) -> Path:
             pre_made_fv = pre_made_fv.parent / (pre_made_fv.name + ".fv")
         pre_made_fv = here / "fv" / pre_made_fv
         if not pre_made_fv.exists():
-            raise argparse.ArgumentTypeError(f"{path} is not a built in fv file") from e
+            avail = get_avail_fv()
+            avail_list = "\n\t- ".join([p.stem for p in avail])
+            raise argparse.ArgumentTypeError(
+                f"`{path}` could not be interpreted as an fv file,\nprovide a path to a"
+                + " file, or use one of the keywords below:"
+                + f"\n\t- {avail_list}"
+            ) from e
         return pre_made_fv
 
 
