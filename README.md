@@ -61,6 +61,12 @@ dss="/path/to/DSS#2.dss"
 ptyhon -m blendss "path/to/your/config.toml" --fv "/path/to/your/config.fv"
 ```
 
+You can even use one of our built-in fv files like this:
+
+```powershell
+ptyhon -m blendss "path/to/your/config.toml" --fv "calsim3"
+```
+
 ## Included FV files
 
 - `calsim3.fv`: Standard paths read from the CalSim3 DV file.
