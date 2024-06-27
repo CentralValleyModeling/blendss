@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cli = "blendss:cli"
+cli = "blendss.cli:cli"
 
 [tool.setuptools]
 include-package-data = true

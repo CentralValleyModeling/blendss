@@ -7,5 +7,5 @@ except PackageNotFoundError:
     __version__ = None
 
 
+from . import cli
 from .blend import blend
-from .cli import cli
