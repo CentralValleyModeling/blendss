@@ -60,3 +60,7 @@ dss="/path/to/DSS#2.dss"
 ```powershell
 ptyhon -m blendss "path/to/your/config.toml" --fv "/path/to/your/config.fv"
 ```
+
+## Included FV files
+
+- `calsim3.fv`: Standard paths read from the CalSim3 DV file.
