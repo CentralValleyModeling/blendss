@@ -22,6 +22,21 @@ def file_exists(path: str) -> Path:
     raise argparse.ArgumentTypeError(f"{path} does not exist")
 
 
+def fv_file(path: str) -> Path:
+    try:
+        return file_exists(path)
+    except argparse.ArgumentTypeError as e:
+        here = Path(__file__).parent
+        # Check if this is the name of one of our fv files
+        pre_made_fv = Path(path)
+        if not pre_made_fv.suffix:
+            pre_made_fv = pre_made_fv.parent / (pre_made_fv.name + ".fv")
+        pre_made_fv = here / "fv" / pre_made_fv
+        if not pre_made_fv.exists():
+            raise argparse.ArgumentTypeError(f"{path} is not a built in fv file") from e
+        return pre_made_fv
+
+
 def file_new(path: str) -> Path:
     p = Path(path).resolve()
     if p.exists():
@@ -30,7 +45,6 @@ def file_new(path: str) -> Path:
 
 
 def parse_arguments():
-    here = Path(__file__).parent
     parser = argparse.ArgumentParser(
         description="Utility for combining multiple DSS files that contain similar data"
     )
@@ -52,8 +66,7 @@ def parse_arguments():
 
     parser.add_argument(
         "--fv",
-        default=here / "fv" / "standard_paths.fv",
-        type=file_exists,
+        type=fv_file,
         help="Location of the fv configuration file (default: paths.fv)",
     )
 
