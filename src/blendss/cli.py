@@ -68,6 +68,7 @@ def parse_arguments():
         "--fv",
         type=fv_file,
         help="Location of the fv configuration file (default: paths.fv)",
+        required=True,
     )
 
     parser.add_argument(
