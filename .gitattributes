@@ -1,0 +1,4 @@
+# only support windows line endings for CalSim-like files
+*.wresl eol=crlf
+*.table eol=crlf
+*.launch eol=crlf
