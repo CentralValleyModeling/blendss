@@ -144,7 +144,7 @@ def main(src: Path, dst: Path, dss: Path) -> None:
         DST.write(
             "# This toml file was automatically created by the blendss utility.\n"
         )
-        DST.write("# This file contains paths and their metadata from a `fv` file.\n")
+        DST.write("# This file contains paths and their metadata from an `fv` file.\n")
         DST.write(f"# The original `fv` file was: {str(src)}\n")
         if dss:
             DST.write(f"# Additional metadata was added by reading: {str(dss)}\n")
